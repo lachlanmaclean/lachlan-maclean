@@ -9,16 +9,16 @@ var y = fs.readFileSync('testData/testData2.txt').toString('utf-8').split('\r\n'
 //calculate n
 let n = x.length;
 
-//calculate x and y squared
+//calculate x^2 and y^2
 let x2 = x.map(v => Math.pow(v,2));
 let y2 = y.map(v => Math.pow(v,2));
 
-//Calculate sigma x and y. The sum of the arrays
+//Calculate signma x
 let sumx = 0;
 for (i in x){
     sumx = sumx + parseFloat(x[i]);
 }
-
+//Calculate signma y
 let sumy = 0;
 for (i in y){
     sumy = sumy + parseFloat(y[i]);
@@ -27,41 +27,43 @@ for (i in y){
 //calculate average of x
 let avgx = 0;
 avgx = sumx / x.length;
-
+//Calculate average of y
 let avgy = 0;
 avgy = sumy / y.length;
 
-//calculate xy. x * y
+//calculate x * y
 let xy = [];
 for (var i = 0; i < x.length; i++)
 {
     xy.push(x[i]*y[i])
 }
 
-//calculate sumxy
+//calculate sigma xy
 let sumxy = 0;
 for (i in xy){
     sumxy = sumxy + parseFloat(xy[i]);
 }
-//calculate sumx2
+//calculate sigma x^2
 let sumx2 = 0;
 for (i in x2){
     sumx2 = sumx2 + parseFloat(x2[i]);
 }
-//calculate sumy2
+//calculate sigma y^2
 let sumy2 = 0;
 for (i in y2){
     sumy2 = sumy2 + parseFloat(y2[i]);
 }
+//correlation forumla
 function correlation(){
     var r = (n*(sumxy) - (sumx)*(sumy))/Math.sqrt((n*sumx2-(sumx*sumx))*(n*sumy2-(sumy*sumy)));
     return r
 }
-
+//regression formula.
 function regression(){
+    //Calculating beta1 and beta2
     var b1 = (sumxy - (n * avgx * avgy))/(sumx2-(n * avgx * avgx));
     var b2 = avgy - (b1 * avgx);
-
+    //calculating y linear regression
     y = 'y = ' + b1 + 'X + ' + b2;
     return y;
 }
