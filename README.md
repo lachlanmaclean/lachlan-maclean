@@ -1,9 +1,6 @@
 # Lachlan Maclean BCPR280
 
-NodeJS Backend application utilizing
-Express
-Bootstrap 4
-Mutler
+NodeJS Backend application utilizing Express, Bootstrap 4, Mutler and Vue
 
 
 ## Getting Started

@@ -9,7 +9,6 @@
 //calculate(x,y);
 function calculate(x,y) {
 
-
     let n = x.length;
 
 //calculate x^2 and y^2
