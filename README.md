@@ -65,3 +65,7 @@ Simply append the URL with some numbers of your choice and my API will generate 
 
 ## Correlation and Regression
 
+Uploads files using Mutler and then sends to server to process the calculation.
+
+Will only accept txt that has numeric values. Uploading a random file will simply present user with a NaN calculation result.
+
