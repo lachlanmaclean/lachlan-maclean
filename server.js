@@ -60,6 +60,6 @@ app.get('/', function (req, res) {
 });
 
 //Starts the server on PORT 3000
-app.listen(3000, function () {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Lachlan\'s assignment 2 BCPR280 starting.....\nListening on Port 3000');
 });
